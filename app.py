@@ -5,6 +5,14 @@ from flask import Flask,render_template,request,redirect
 import math
 
 import chardet
+def printer(hell):
+    print(hell)
+    if hell == 0:
+        return None
+    for i in range(hell // 2, 0, -1):
+        if hell % i == 0:
+            return i
+    return 1
 def find_encoding(fname):
     r_file=open(fname,'rb').read()
     result=chardet.detect(r_file)
